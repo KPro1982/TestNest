@@ -1,0 +1,82 @@
+class CfgPatches
+{
+	class TN_TestNest
+	{
+        units[] = {};
+        weapons[] = {};
+        requiredVersion = 0.1;
+		requiredAddons[] = {"JM_CF_Scripts", "DZ_Data"}; // add required mods here if any "mod1", "mod2"
+	};
+};
+
+class CfgMods 
+{
+	class TN_TestNest
+	{
+		name = "Kpro1982";
+		dir = "TestNest";
+		credits = "Kpro1982";
+		author = "Kpro1982";
+		overview = "A new mod";
+		creditsJson = "TestNest/Scripts/Data/Credits.json";
+		versionPath = "TestNest/Scripts/Data/Version.hpp";
+		type = "mod";
+		
+		
+		inputs="TestNest/Scripts/data/inputs.xml";
+		
+		
+		dependencies[] =
+		{
+			"Game", "World", "Mission"
+		};
+
+		
+		class defs
+		{
+			
+			class engineScriptModule
+			{
+				value = "";
+				files[] =
+				{
+					"scripts/1_core",
+					"TestNest/Scripts/common",
+					"TestNest/Scripts/1_core"
+				};
+			};
+
+			class gameScriptModule
+			{
+				value="";
+				files[] = 
+				{
+					"scripts/3_Game",
+					"TestNest/Scripts/common",
+					"TestNest/Scripts/3_Game"
+				};
+			};
+			class worldScriptModule
+			{
+				value="";
+				files[] = 
+				{
+					"scripts/4_World",
+					"TestNest/Scripts/common",
+					"TestNest/Scripts/4_World"
+				};
+			};
+
+			class missionScriptModule 
+			{
+				value="";
+				files[] = 
+				{
+					"scripts/5_Mission",
+					"TestNest/Scripts/common",
+					"TestNest/Scripts/5_Mission"
+				};
+			};
+		};
+	};
+};
